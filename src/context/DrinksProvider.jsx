@@ -1,48 +1,49 @@
-import { useState, useEffect, createContext } from 'react';
-import PropTypes from 'prop-types';
-import { getRecipeService, filterDrinksService } from "../services/drink.service";
+import { useState, useEffect, createContext } from "react";
+import PropTypes from "prop-types";
+import { filterDrinksService, getRecipeService } from "../services/drink.service";
 
 const DrinksContext = createContext();
 
-const DrinksProvider = ({children}) => {
-    const [ drinks, setDrinks ] = useState([]);
-    const [ modal, setModal ] = useState(false);
-    const [ drinkId, setDrinkId ] = useState(null);
-    const [ recipe, setRecipe ] = useState([]);
-    const [ loading, setLoading ] = useState(false);
+const DrinksProvider = ({ children }) => {
+    const [drinks, setDrinks] = useState([]);
+    const [modal, setModal] = useState(false);
+    const [drinkId, setDrinkId] = useState(null);
+    const [recipe, setRecipe] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-    const hundleModalClick = () => {
-        setModal(!modal)
+    function handleModalClick() {
+        setModal(!modal);
     }
-    const hundleDrinkIdClick = (id) => {
-        setDrinkId(id)
+
+    function handleDrinkIdClick(id) {
+        setDrinkId(id);
     }
-    const getRecipe = async () => {
-        if(!drinkId) return;
+
+    async function getRecipe() {
+        if (!drinkId) return;
         try {
             setLoading(true);
-            const recipeData = await getRecipeService(drinkId);
-            setRecipe(recipeData)
+            const recipaData = await getRecipeService(drinkId);
+            setRecipe(recipaData);
         } catch (error) {
             console.error(error);
-        } finally{
+        } finally {
             setLoading(false);
         }
-
     }
-    const getDrink = async (data) => {
+
+    async function getDrink(data) {
         try {
             setLoading(true);
             const drinksData = await filterDrinksService(data.name, data.category);
             setDrinks(drinksData);
         } catch (error) {
-            console.error(error)
+            console.error(error);
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
-
     }
-    
+
     useEffect(() => {
         getRecipe();
     }, [drinkId]);
@@ -52,21 +53,15 @@ const DrinksProvider = ({children}) => {
         modal,
         recipe,
         loading,
-        hundleDrinkIdClick,
-        hundleModalClick,
+        handleModalClick,
+        handleDrinkIdClick,
         getDrink,
-    }
+    };
 
-    return(
-        <DrinksContext.Provider value={contextValues}>
-            {children}
-        </DrinksContext.Provider>
-    )
-
-}
-
+    return <DrinksContext.Provider value={contextValues}>{children}</DrinksContext.Provider>;
+};
 DrinksProvider.propTypes = {
     children: PropTypes.node.isRequired,
 };
 
-export { DrinksContext, DrinksProvider};
+export { DrinksContext, DrinksProvider };

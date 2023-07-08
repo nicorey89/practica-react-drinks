@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 
 export default function DrinkCard ({ drink }){
-    const { handleDrinkClick, handleModalClick, } = useDrinks();
+    const { handleDrinkIdClick, handleModalClick, } = useDrinks();
 
     return (
         <Col md={6} ld={3} >
@@ -23,7 +23,7 @@ export default function DrinkCard ({ drink }){
                         className= "w-100 text-uppercase mt-2"
                         onClick={() => {
                             handleModalClick();
-                            handleDrinkClick(drink.idDrink)
+                            handleDrinkIdClick(drink.idDrink)
                         }}>
                         ver receta
                     </Button>
