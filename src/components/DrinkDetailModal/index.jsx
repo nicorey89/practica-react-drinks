@@ -20,7 +20,7 @@ export default function DrinkDetailModal () {
 
     return (
         !loading && (
-            <Modal show={modal} onHide={handleModalClick}>
+            <Modal show={modal} onHide={handleModalClick} >
               <Image
                 src={recipe.strDrinkThumb}
                 alt={`Imagen receta ${recipe.strDrink}`}
