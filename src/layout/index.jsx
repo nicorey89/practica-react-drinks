@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PropTypes from "prop-types";
 import { Container } from "react-bootstrap";
+import CartModal from "../components/CartModal";
 
 export default function MainLayout ({children}) {
     return (
@@ -11,6 +12,7 @@ export default function MainLayout ({children}) {
             <Container className="mt-5">
                 {children}
             </Container>
+            <CartModal />
             <Footer />
         </div>
 
