@@ -24,7 +24,7 @@ export default function DrinkCard ({ drink }){
                         {drink.strDrink}
                     </Card.Title>
                     <Card.Subtitle>
-                        {drink.price}
+                        $ {drink.price}
                     </Card.Subtitle>
                     <Row>
                     <Col className="w-50 p-3 mt-2">

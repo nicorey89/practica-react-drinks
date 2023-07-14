@@ -86,3 +86,10 @@
     background-color: lightgoldenrodyellow;
     color: grey;
 }
+aside{
+    padding: 10px;
+
+}
+.nombre{
+    width: 150px;
+}
