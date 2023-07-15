@@ -4,7 +4,7 @@ export const cartInitialState = {
     cartItems: [],
 }
 
-export function cartReducer (state, { type, payLoad }) {
+export function cartReducer (state, { type, payLoad = {} }) {
     const { idDrink } = payLoad;
     let drinkInCart = state.cartItems.find((item) => item.idDrink === idDrink)
     switch(type) {
@@ -35,17 +35,17 @@ export function cartReducer (state, { type, payLoad }) {
             }
         case actionTypes.REMOVE_ONE_FROM_CART:
             //existe el producto en el carrito?
-            if(drinkInCart){
+            if(drinkInCart.quantity > 1){
                 //quantity > 1 ? restar 1
-                let cartItemsUpdated = state.cartItems.filter( item => {
+                let cartItemsUpdated = state.cartItems.map((item) => {
                     if(item.idDrink === idDrink){
                         return {
                             ...item,
                             quantity: item.quantity - 1, 
                         }
                     }
-                    return item
-                })
+                    return item;
+                });
                 return {
                     ...state,
                     cartItems: cartItemsUpdated,
@@ -53,7 +53,7 @@ export function cartReducer (state, { type, payLoad }) {
             }else{
                 //quantity < 1 = quitar del carrito 
                 if(drinkInCart){
-                    let cartItemsUpdated = state.cartItems.filter(item => !item.idDrink === idDrink)
+                    let cartItemsUpdated = state.cartItems.filter((item) => item.idDrink !== idDrink);
                     return {
                         ...state,
                         cartItems: cartItemsUpdated
@@ -62,7 +62,7 @@ export function cartReducer (state, { type, payLoad }) {
             }
         case actionTypes.REMOVE_ALL_FROM_CART:
             if(drinkInCart){
-                let cartItemsUpdated = state.cartItems.filter(item => !item.idDrink === idDrink)
+                let cartItemsUpdated = state.cartItems.filter(item => item.idDrink !== idDrink)
                 return {
                     ...state,
                     cartItems: cartItemsUpdated
