@@ -4,10 +4,14 @@ import { CartProvider } from "./context/CartProvider"
 import MainLayout from "./layout"
 import AppRoutes from "./routes"
 import { ModalProvider } from "./context/ModalProvider"
+import { AuthProvider } from "./context/AuthProvider"
+import { BrowserRouter as Router } from "react-router-dom"
 
 function App() {
 
   return (
+    <Router>
+    <AuthProvider>
     <ModalProvider>
       <CartProvider>
         <MainLayout>
@@ -19,6 +23,8 @@ function App() {
         </MainLayout>
       </CartProvider>
     </ModalProvider>
+    </AuthProvider>
+    </Router>
   )
 }
 
