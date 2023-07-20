@@ -9,14 +9,20 @@ export default function Header () {
     const { logout, currentUser } = useAuth();
     return (
         <header className={`py-5 ${styles.header}`}>
+            <div>
             <h1>Buscador de bebidas</h1>
+            </div>
             {
                 currentUser && (
                     <>
-                    <h2>{currentUser.name}</h2>
-                    <FontAwesomeIcon icon={faCartShopping} className={styles.icon} onClick={() => toogleModal()}/>
-                    <br/>
+                    <div className={styles.bienvenido}>
+                    <h2>Bienvenid@ {currentUser.name} !</h2>
+                    </div>
+                    <div className={styles.cartUser}>
                     <button onClick={logout}>Cerrar sesion</button>
+                    <br/>
+                    <FontAwesomeIcon icon={faCartShopping} className={styles.icon} onClick={() => toogleModal()}/>
+                    </div>
                     </>
                 )
             }

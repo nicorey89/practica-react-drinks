@@ -3,6 +3,7 @@ import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import useCategories from '../../hooks/useCategories';
 import useDrinks from '../../hooks/useDrinks';
+import styles from "./SearchForm.module.css"
 
 export default function SearchForm() {
     const { categories } = useCategories();
@@ -39,13 +40,14 @@ export default function SearchForm() {
                         <Row>
                             <Col md={6}>
                                 <Form.Group className="mb-3">
-                                    <Form.Label htmlFor='name'>Nombre Bebiba</Form.Label>
+                                    <Form.Label htmlFor='name' className={styles.titulo}>Nombre Bebiba</Form.Label>
                                     <Field
                                         id="name"
                                         type="text"
                                         placeholder="Ej: Tequila, Vodka, etc."
                                         name="name"
                                         as={Form.Control}
+                
                                     />
                                     <ErrorMessage
                                         name="name"
@@ -56,7 +58,7 @@ export default function SearchForm() {
                             </Col>
                             <Col md={6}>
                                 <Form.Group className="mb-3">
-                                    <Form.Label htmlFor='category'>Categoria Bebida</Form.Label>
+                                    <Form.Label htmlFor='category' className={styles.titulo}>Categoria Bebida</Form.Label>
                                     <Field
                                         id="category"
                                         placeholder="- Selecciona una categoria -"

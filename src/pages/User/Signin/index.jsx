@@ -10,7 +10,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Formik } from 'formik';
-import Copyright from '../Copyright';
 import useAuth from '../../../hooks/useAuth';
 
 
@@ -22,7 +21,7 @@ export default function SignIn() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" sx={{bgcolor:'white', opacity: '0.8', borderRadius: '10px'}}>
         <CssBaseline />
         <Box
           sx={{
@@ -118,8 +117,9 @@ export default function SignIn() {
            }
            </Formik>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
+      <br/>
+      <br/>
     </ThemeProvider>
   );
 }
