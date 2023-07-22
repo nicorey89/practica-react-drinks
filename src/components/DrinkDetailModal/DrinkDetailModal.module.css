@@ -27,7 +27,7 @@
     float: right;
 }
 .imagen img{
-    width: 400px;
+    width: 350px;
 }
 .modal{
     display: flex;
@@ -37,7 +37,7 @@
 }
 .instrucciones{
     height: 200px;
-    width: 400px;
+    width: 350px;
     border: 1px solid #ddd;
     background: #f1f1f1;
     overflow-y: scroll;
@@ -45,7 +45,7 @@
 }
 .instrucciones2{
     height: 200px;
-    width: 400px;
+    width: 350px;
     border: 1px solid #ddd;
     background: #f1f1f1;
     overflow-y: scroll;
