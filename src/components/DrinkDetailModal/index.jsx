@@ -41,14 +41,10 @@ export default function DrinkDetailModal () {
                   <p>{recipe.strInstructions}</p>
                 </div>
               </div>
-              <div>
-              <Modal.Body>
                 <div className={styles.instrucciones2}>
                   <h2>Ingredientes y Cantidad</h2>
                   {showIngredients()}
                 </div>
-              </Modal.Body>
-              </div>
               </div>
             </article>
           </div>
