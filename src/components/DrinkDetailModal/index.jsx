@@ -43,7 +43,7 @@ export default function DrinkDetailModal () {
               </div>
               <div>
               <Modal.Body>
-                <div className="p-3">
+                <div className={styles.instrucciones2}>
                   <h2>Ingredientes y Cantidad</h2>
                   {showIngredients()}
                 </div>

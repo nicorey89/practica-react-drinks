@@ -34,6 +34,25 @@
     flex-direction: column;
 
 }
+.instrucciones{
+    height: 200px;
+    width: 300px;
+    border: 1px solid #ddd;
+    background: #f1f1f1;
+    overflow-y: scroll;
+    padding: 6px;
+}
+.instrucciones2{
+    height: 200px;
+    width: 300px;
+    border: 1px solid #ddd;
+    background: #f1f1f1;
+    overflow-y: scroll;
+    padding: 6px;
+}
+.instrucciones p{
+    width: 100%;
+}
 
 
 @media (min-width: 700px){
@@ -41,15 +60,13 @@
         display: flex;
         flex-direction: row;
     }
-    .instrucciones{
-        height: 200px;
-        width: 300px;
-        border: 1px solid #ddd;
-        background: #f1f1f1;
-        overflow-y: scroll;
+    .instrucciones2{
+        height: 100%;
+        overflow:auto;
+        background: white;
+        border: none;
+
     }
-    .instrucciones p{
-        width: 100%;
-    }
+
     
 }
