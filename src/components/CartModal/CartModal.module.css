@@ -93,3 +93,7 @@ aside{
 .nombre{
     width: 150px;
 }
+.modalDrinkListContainer{
+    max-height: 400px;
+    overflow-y: scroll;
+}
