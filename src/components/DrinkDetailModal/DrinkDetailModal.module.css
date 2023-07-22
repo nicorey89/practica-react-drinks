@@ -38,16 +38,14 @@
 .instrucciones{
     height: 200px;
     width: 350px;
-    border: 1px solid #ddd;
-    background: #f1f1f1;
+    background: white;
     overflow-y: scroll;
     padding: 6px;
 }
 .instrucciones2{
     height: 200px;
     width: 350px;
-    border: 1px solid #ddd;
-    background: #f1f1f1;
+    background: white;
     overflow-y: scroll;
     padding: 6px;
 }
