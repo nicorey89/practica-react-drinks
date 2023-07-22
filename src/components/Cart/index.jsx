@@ -10,7 +10,7 @@ export function ModalCart ({drink}) {
         <article className={styles.card}>
         <img src={drink.strDrinkThumb} alt="" className={styles.img} />
         <span className={styles.nombre}>{drink.strDrink}</span>
-        <span>{drink.price}</span>
+        <span>$ {drink.price}</span>
         <div className={styles.counter}>
             <button onClick={() => removeOneFromCart(drink.idDrink)}>
                 -

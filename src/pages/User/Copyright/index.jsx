@@ -6,7 +6,7 @@ export default function Copyright(props) {
       <Typography variant="body2" color="white" align="center" {...props}>
         {'Copyright © '}
         <Link color="inherit" to="https://nicoreydev.vercel.app">
-          React Drinks
+          Nico Rey
         </Link>{' '}
         {new Date().getFullYear()}
         {'.'}

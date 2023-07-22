@@ -27,7 +27,14 @@ export default function DrinkCard ({ drink }){
                         $ {drink.price}
                     </Card.Subtitle>
                     <Row>
-                    <Col className="w-50 p-3 mt-2">
+                    <Col className="w-100 p-3 mt-2">
+                    <Button 
+                        variant="primary"
+                        className= "w-100 text-uppercase"
+                        onClick={() => handleAddToCart(drink)}
+                    >
+                        Agregar al carrito
+                    </Button>
                     <Button 
                         variant="warning"
                         className= "w-100 text-uppercase mt-2"
@@ -36,15 +43,6 @@ export default function DrinkCard ({ drink }){
                             handleDrinkIdClick(drink.idDrink)
                         }}>
                         ver receta
-                    </Button>
-                    </Col>
-                    <Col className="w-50 p-3 mt-2">
-                    <Button 
-                        variant="primary"
-                        className= "text-uppercase"
-                        onClick={() => handleAddToCart(drink)}
-                    >
-                        Agregar al carrito
                     </Button>
                     </Col>
                     </Row>

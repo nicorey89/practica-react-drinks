@@ -29,7 +29,7 @@ function CartProvider ({ children }) {
         dispatch({type: actionTypes.CLEAR_CART})
     }
     function sendOrder() {
-        alert(JSON.stringify(state))
+        alert(`Confirma tu compra por un total de $ ${orderTotal}`)
     }
     const cartValues = {
         cart : state,

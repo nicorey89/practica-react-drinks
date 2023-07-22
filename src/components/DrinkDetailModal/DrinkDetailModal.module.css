@@ -1,0 +1,55 @@
+.articleBg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.article{
+    background-color: white;
+    width: 700px;
+    height: 100%;
+    border-radius: 8px;
+    padding: 1rem;
+
+}
+.titulo{
+    text-align: center;
+}
+.icon{
+    color: grey;
+    font-size: 1.5rem;
+    cursor: pointer;
+    float: right;
+}
+.imagen img{
+    width: 300px;
+}
+.modal{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+@media (min-width: 700px){
+    .modal{
+        display: flex;
+        flex-direction: row;
+    }
+    .instrucciones{
+        height: 200px;
+        width: 300px;
+        border: 1px solid #ddd;
+        background: #f1f1f1;
+        overflow-y: scroll;
+    }
+    .instrucciones p{
+        width: 100%;
+    }
+    
+}
