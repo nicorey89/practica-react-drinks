@@ -25,7 +25,11 @@ function CartModal () {
                         )})}
                     </div>
                     <aside>
-                        <p>total: $ {orderTotal}</p>
+                        {
+                            orderTotal !== 0 && (
+                                <p>total: $ {orderTotal}</p>
+                            )
+                        }
                         <div className={styles.btnContainer}>
                             <button className={styles.clearCart} onClick={clearCart}>Vaciar Carrito</button>
                             <button className={styles.confirmCart} onClick={sendOrder}>Confirmar Compra</button>
