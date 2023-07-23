@@ -4,28 +4,32 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import useModal from "../../hooks/useModal";
 import useAuth from "../../hooks/useAuth";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import Logo from "../../assets/logo/c.svg"
 
 export default function Header () {
     const { toogleModal } = useModal();
     const { logout, currentUser } = useAuth();
     return (
-        <header className={`py-5 ${styles.header}`}>
-            <div>
-            <h1>Argentina Cokctails</h1>
-            </div>
-            {
-                currentUser && (
+        
+        <header className={styles.header}>
+        {
+            currentUser && (
                     <div className={styles.navBar}>
+                    <div className={styles.logoContainer}>
+                    <img src={Logo} alt="" className={styles.logo} />
+                    </div>
+                    <div className={styles.userContainer}>
                     <div className={styles.bienvenido}>
-                    <h2>Bienvenid@ {currentUser.name} !</h2>
+                    <h3>Bienvenid@ {currentUser.name} !</h3>
                     </div>
                     <div className={styles.cartUser}>
-                    <FontAwesomeIcon icon={faUser} className={styles.icon} onClick={logout}/>
                     <FontAwesomeIcon icon={faCartShopping} className={styles.icon} onClick={() => toogleModal()}/>
+                    <FontAwesomeIcon icon={faUser} className={styles.icon} onClick={logout}/>
                     </div>
                     </div>
-                )
-            }
+                    </div>
+                    )
+                }
         </header>
     )
     
