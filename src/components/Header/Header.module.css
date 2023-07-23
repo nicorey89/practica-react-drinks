@@ -1,4 +1,7 @@
 .header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     background-color: rgba(0, 0, 0, 0.3);
     color: white;
     text-align: center;
@@ -50,6 +53,11 @@ header button:hover{
     justify-content: space-evenly;
 }
 @media(min-width: 700px){
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
     .navBar{
         display: flex;
         flex-direction: row;

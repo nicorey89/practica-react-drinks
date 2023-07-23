@@ -12,12 +12,12 @@ export default function Header () {
     return (
         
         <header className={styles.header}>
-        {
-            currentUser && (
-                    <div className={styles.navBar}>
                     <div className={styles.logoContainer}>
                     <img src={Logo} alt="" className={styles.logo} />
                     </div>
+        {
+            currentUser && (
+                    <div className={styles.navBar}>
                     <div className={styles.userContainer}>
                     <div className={styles.bienvenido}>
                     <h3>Bienvenid@ {currentUser.name} !</h3>
